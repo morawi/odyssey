@@ -1,6 +1,9 @@
-# GeoNode Odyssey
+# Odyssey
+
+
 
 ## Table of Contents
+-  [What is Odyssey](#what-is-odyssey)
 
 -  [Installation](#installation)
 	-  [Preparation](#preparation)
@@ -19,6 +22,9 @@
 -  [Some Restrictions to keep in mind when using GeoNode](#some-restrictions-to-keep-in-mind-when-using-geonode)
 	-  [Import Occurrences](#import-occurrences)
 	-  [Automatic Identification](#automatic-identification)
+
+## What is odyssey
+ blah blah blah 
 
 ## Installation
 
