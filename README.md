@@ -28,15 +28,15 @@ Odyssey is a geospatial content management system that can be used for the manag
 
 Odyssey integrates various types of data, such as Light Detection and Ranging (LiDAR) data and multispectral images both captured using Unmanned Aerial Vehicles (UAVs). To help experts, Odyssey can store, manipulate, and present data via a web interface, in addition to a metadata catalog that allows information searching. To ensure data interoperability, the metadata should be normalized [through specific standards: Unless we mention the standard this statement should be deleted]. Odyssey can provide these functionalities: 
 
-   •	Visualization of data on a map. In the case of LiDAR data, the visualization is made through derived products, such as Digital Terrain Model (DTM). 
+   *	Visualization of data on a map. In the case of LiDAR data, the visualization is made through derived products, such as Digital Terrain Model (DTM). 
 
-   •	Data availability through services such as Web Map Service (WMS) and Web Feature Service (WFS). 
+   *	Data availability through services such as Web Map Service (WMS) and Web Feature Service (WFS). 
 
-   •	Data searching, either through the metadata component, or through the geographic component using a map. 
+   *	Data searching, either through the metadata component, or through the geographic component using a map. 
 
-   •	Possibility to make annotations. These annotations include the archaeological site record, which contains information such as photos or reports, geographic data represented by polygons, and other relevant information such as geographic metadata or the coordinate system. 
+   *	Possibility to make annotations. These annotations include the archaeological site record, which contains information such as photos or reports, geographic data represented by polygons, and other relevant information such as geographic metadata or the coordinate system. 
 
-   •	Ground truthing, i.e., validation of annotations in the field, allowing editing or adding new annotations. 
+   *	Ground truthing, i.e., validation of annotations in the field, allowing editing or adding new annotations. 
 
 
 ## Installation
