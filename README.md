@@ -3,7 +3,7 @@
 
 
 ## Table of Contents
--  [What is Odyssey?](#what-is-odyssey)
+-  [What is Odyssey?](#what-is-odyssey?)
 
 -  [Installation](#installation)
 	-  [Preparation](#preparation)
@@ -23,7 +23,7 @@
 	-  [Import Occurrences](#import-occurrences)
 	-  [Automatic Identification](#automatic-identification)
 
-## What is odyssey
+## What is odyssey?
 Odyssey is a geospatial content management system that can be used for the management and publication of geospatial data. It brings open-source software project on top of the GeoNode platform and provides easy-to-use interface allowing non-specialized users to share data and create interactive maps. It is hoped that Odyssey can integrate machine learning algorithms for the automatic identification of archaeological sites. 
 Odyssey integrates various types of data, such as Light Detection and Ranging (LiDAR) data and multispectral images both captured using Unmanned Aerial Vehicles (UAVs). To help experts, Odyssey can store, manipulate, and present data via a web interface, in addition to a metadata catalog that allows information searching. To ensure data interoperability, the metadata should be normalized [through specific standards: Unless we mention the standard this statement should be deleted]. Odyssey can provide these functionalities: 
 
