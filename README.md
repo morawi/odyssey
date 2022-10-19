@@ -24,7 +24,14 @@
 	-  [Automatic Identification](#automatic-identification)
 
 ## What is odyssey
- blah blah blah 
+Odyssey is a geospatial content management system that can be used for the management and publication of geospatial data. It brings open-source software project on top of the GeoNode platform and provides easy-to-use interface allowing non-specialized users to share data and create interactive maps. It is hoped that Odyssey can integrate machine learning algorithms for the automatic identification of archaeological sites. 
+Odyssey integrates various types of data, such as Light Detection and Ranging (LiDAR) data and multispectral images both captured using Unmanned Aerial Vehicles (UAVs). To help experts perform field validations, Odyssey can store, manipulate, and present data via a web interface, in addition to a metadata catalog that allows information searching. To ensure data interoperability, the metadata should be normalized [through specific standards: Unless we mention the standard this statement should be deleted]. Odyssey can provide these functionalities: 
+•	Visualization of data on a map. In the case of LiDAR data, the visualization is made through derived products, such as Digital Terrain Model (DTM). 
+•	Data availability through services such as Web Map Service (WMS) and Web Feature Service (WFS). 
+•	Data searching, either through the metadata component, or through the geographic component using a map. 
+•	Possibility to make annotations. These annotations include the archaeological site record, which contains information such as photos or reports, geographic data represented by polygons, and other relevant information such as geographic metadata or the coordinate system. 
+•	Ground truthing, i.e., validation of annotations in the field, allowing editing or adding new annotations. 
+
 
 ## Installation
 
