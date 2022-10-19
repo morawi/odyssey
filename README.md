@@ -3,7 +3,7 @@
 
 
 ## Table of Contents
--  [What is Odyssey](#what-is-odyssey)
+-  [What is Odyssey?](#what-is-odyssey)
 
 -  [Installation](#installation)
 	-  [Preparation](#preparation)
