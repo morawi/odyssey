@@ -44,6 +44,8 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
 **NOTE**: *The installation assumes an Ubuntu 20.04LTS 64-bit environment.*
 ### Preparation
 
+0. Install Python  https://phoenixnap.com/kb/how-to-install-python-3-ubuntu
+
 1. Install the development header files
 
     ```bash
