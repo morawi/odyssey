@@ -49,15 +49,17 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
     ```bash
     sudo apt install libmemcached-dev
     ```
+
 2.	Install GDAL
 
     ```bash
     sudo apt install libpq-dev gdal-bin libgdal-dev 
    ```
+   
 3. Install git
 
 
-4.A.1 Install ANACONDA DISTRIBUTION
+4.A.1. Install ANACONDA DISTRIBUTION
 The world’s most popular open-source Python distribution platform
 https://www.anaconda.com/products/distribution
 4.A.2 3.1 Create a virtual environment named:
@@ -117,7 +119,7 @@ Or, do it the nasty way
 
 ### Now, **let's get serious**
 
-### A: GeoNode-Project Installation without Docker
+### A: GeoNode-Project Installation without Docker (the hard way, if you are as lazy as we are, skip all A and go to section B)
 
 This installation method does not use Docker and is suitable for development. The installation instructions are based on the [official GeoNode documentation](https://docs.geonode.org/en/3.3.x/devel/installation/index.html#install-geonode-project-directly-from-scratch).
 **NOTE** We never used this installation as it did not work perfectly, and we relied on the one built from docker shown later. We're keeping it for the record.
@@ -134,7 +136,7 @@ A.2.	Install Django framework
     pip install Django==2.2.24
     ```
 
-A.3	Install the requirements for the GeoNode-project and install the GeoNode-project
+A.3.	Install the requirements for the GeoNode-project and install the GeoNode-project
 
 	**NOTE**: *Errors may occur for packages that have versions that are incompatible with GeoNode. In these cases, you should reinstall each package with the respective version.*
 
@@ -279,6 +281,9 @@ To stop GeoNode:
 ./paver_dev.sh stop
 ```
 **NOTE**: Phew, end of section **A** that might not reall work!
+
+
+**..**
 
 
 ### Now, the real deal ... 
