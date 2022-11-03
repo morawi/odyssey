@@ -44,23 +44,24 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
 **NOTE**: *The installation assumes an Ubuntu 20.04LTS 64-bit environment.*
 ### Preparation
 
-1. Install the development header files
+1. Install git
+
+    ```bash
+    sudo apt install git-all
+    ```
+   
+
+2. Install the development header files
 
     ```bash
     sudo apt install libmemcached-dev
     ```
 
-2.	Install GDAL
+2. Install GDAL
 
     ```bash
     sudo apt install libpq-dev gdal-bin libgdal-dev 
-   ```
-\
 
-3. Install git
-    ``` 
-    sudo apt install git-all
-   ```
 
 **NOTE**: Maybe we can move 1, 2, and 3 to be installed inside the virtual environment!
 \
