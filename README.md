@@ -54,29 +54,31 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
     ```bash
     sudo apt install libpq-dev gdal-bin libgdal-dev 
    ```
+3. Install git
 
-3 Install ANACONDA DISTRIBUTION
+
+4.A.1 Install ANACONDA DISTRIBUTION
 The world’s most popular open-source Python distribution platform
 https://www.anaconda.com/products/distribution
-
-3.1 Create a virtual environment named:
-
+4.A.2 3.1 Create a virtual environment named:
  ```bash
     geonode_odyssey
  ```
 
-Or, 
 
-4.1. Install Python 3.10 
+
+Or, do it the nasty way
+
+4.B.1. Install Python 3.10 
  
-4.2.Install virtualenvwrapper/virtualenv
+4.B.2. Install virtualenvwrapper/virtualenv
 
     ```bash
     sudo apt-get install python3-pip
 	sudo pip3 install virtualenv
 	sudo pip3 install virtualenvwrapper
     ```
-4.3	Add the following lines to the shell startup file
+4.B.3.	Add the following lines to the shell startup file
     ```bash
     vim ~/.bashrc
 	# Add following lines
@@ -85,29 +87,28 @@ Or,
 	export VIRTUALENVWRAPPER_PYTHON=’/usr/bin/python3’
 	source /usr/local/bin/virtualenvwrapper.sh
     ```
-4.4.	Close the file and run the following command
+4.B.4.	Close the file and run the following command
 
     ```bash
     source ~/.bashrc
      ```
 
-4.5.	Create a virtual environment
+4.B.5.	Create a virtual environment
 
     ```bash
     mkvirtualenv --python=/usr/bin/python3 geonode_odyssey
 	workon geonode_odyssey
      ```
-   
-5.    Install git
 
+** NOTE**: Now, we log into the virtual environment and start doing things
 
-4.	Install Django framework
+5.	Install Django framework
 
 	```bash
     pip install Django==2.2.24
     ```
 
-2.    Clone the project from GitHub (this will doanload / save the repository to your drive)
+6.    Clone the project from GitHub (this will doanload / save the repository to your drive)
 
     ```bash
     git clone https://github.com/rafaelsa99/odyssey.git
@@ -121,13 +122,13 @@ Or,
 This installation method does not use Docker and is suitable for development. The installation instructions are based on the [official GeoNode documentation](https://docs.geonode.org/en/3.3.x/devel/installation/index.html#install-geonode-project-directly-from-scratch).
 **NOTE** We never used this installation as it did not work perfectly, and we relied on the one built from docker shown later. We're keeping it for the record.
 
-A.1	Clone the project from GitHub
+A.1.	Clone the project from GitHub
 
     ```bash
     git clone https://github.com/rafaelsa99/odyssey.git
     ```
 
-A.2	Install Django framework
+A.2.	Install Django framework
 
 	```bash
     pip install Django==2.2.24
