@@ -57,16 +57,19 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
    ```
    
 3. Install git
- ```bash
-    geonode_odyssey
- ```
+    ``` 
+    sudo apt install git-all
+   ```
 
-**NOTE** Maybe we can move 1, 2, and 3 to be installed inside the virtual environment!
-
+**NOTE**: Maybe we can move 1, 2, and 3 to be installed inside the virtual environment!
+\
+\
+\
 4.A.1. Install ANACONDA DISTRIBUTION
 The world’s most popular open-source Python distribution platform
 https://www.anaconda.com/products/distribution
-4.A.2 3.1 Create a virtual environment named:
+
+4.A.2.  Create a virtual environment named:
  ```bash
     geonode_odyssey
  ```
