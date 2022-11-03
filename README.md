@@ -55,7 +55,8 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
     ```bash
     sudo apt install libpq-dev gdal-bin libgdal-dev 
    ```
-   
+\
+
 3. Install git
     ``` 
     sudo apt install git-all
