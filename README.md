@@ -44,8 +44,6 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
 **NOTE**: *The installation assumes an Ubuntu 20.04LTS 64-bit environment.*
 ### Preparation
 
-0. Install Python 3.9.15  https://phoenixnap.com/kb/how-to-install-python-3-ubuntu
-
 1. Install the development header files
 
     ```bash
@@ -54,16 +52,31 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
 2.	Install GDAL
 
     ```bash
-    sudo apt install libpq-dev gdal-bin libgdal-dev
-    ```
-3.	Install virtualenvwrapper/virtualenv
+    sudo apt install libpq-dev gdal-bin libgdal-dev 
+ ```
+
+3 Install ANACONDA DISTRIBUTION
+The world’s most popular open-source Python distribution platform
+https://www.anaconda.com/products/distribution
+
+3.1 Create a virtual environment named:
+
+ ```bash
+    geonode_odyssey
+ ```
+
+Or, 
+
+4.1. Install Python 3.10 
+ 
+4.2.Install virtualenvwrapper/virtualenv
 
     ```bash
     sudo apt-get install python3-pip
 	sudo pip3 install virtualenv
 	sudo pip3 install virtualenvwrapper
     ```
-4.	Add the following lines to the shell startup file
+4.3	Add the following lines to the shell startup file
     ```bash
     vim ~/.bashrc
 	# Add following lines
@@ -72,35 +85,55 @@ Odyssey integrates various types of data, such as Light Detection and Ranging (L
 	export VIRTUALENVWRAPPER_PYTHON=’/usr/bin/python3’
 	source /usr/local/bin/virtualenvwrapper.sh
     ```
-5.	Close the file and run the following command
+4.4.	Close the file and run the following command
 
     ```bash
     source ~/.bashrc
-    ```
-### GeoNode-Project Installation without Docker
+```
 
-This installation method does not use Docker and is suitable for development. The installation instructions are based on the [official GeoNode documentation](https://docs.geonode.org/en/3.3.x/devel/installation/index.html#install-geonode-project-directly-from-scratch).
-
-1.	Create a virtual environment
+4.5.	Create a virtual environment
 
     ```bash
     mkvirtualenv --python=/usr/bin/python3 geonode_odyssey
 	workon geonode_odyssey
-    ```
+ ```
+   
+5.    Install git
 
-2.	Clone the project from GitHub
 
-    ```bash
-    git clone https://github.com/rafaelsa99/odyssey.git
-    ```
-
-3.	Install Django framework
+4.	Install Django framework
 
 	```bash
     pip install Django==2.2.24
     ```
 
-4.	Install the requirements for the GeoNode-project and install the GeoNode-project
+2.    Clone the project from GitHub (this will doanload / save the repository to your drive)
+
+    ```bash
+    git clone https://github.com/rafaelsa99/odyssey.git
+    ```
+
+
+### Now, **let's get serious**
+
+### A: GeoNode-Project Installation without Docker
+
+This installation method does not use Docker and is suitable for development. The installation instructions are based on the [official GeoNode documentation](https://docs.geonode.org/en/3.3.x/devel/installation/index.html#install-geonode-project-directly-from-scratch).
+**NOTE** We never used this installation as it did not work perfectly, and we relied on the one built from docker shown later. We're keeping it for the record.
+
+A.1	Clone the project from GitHub
+
+    ```bash
+    git clone https://github.com/rafaelsa99/odyssey.git
+    ```
+
+A.2	Install Django framework
+
+	```bash
+    pip install Django==2.2.24
+    ```
+
+A.3	Install the requirements for the GeoNode-project and install the GeoNode-project
 
 	**NOTE**: *Errors may occur for packages that have versions that are incompatible with GeoNode. In these cases, you should reinstall each package with the respective version.*
 
@@ -114,7 +147,7 @@ This installation method does not use Docker and is suitable for development. Th
 	pip install -e . --upgrade
     ```
 
-5.	Install GDAL Utilities for Python
+A.4	Install GDAL Utilities for Python
 	```bash
     pip install pygdal=="`gdal-config --version`.*"
     ```
@@ -123,7 +156,7 @@ This installation method does not use Docker and is suitable for development. Th
 
 The installation instructions are based on the [official GeoNode documentation](https://docs.geonode.org/en/3.3.x/install/advanced/project/index.html#geonode-project-installation).
 
-1.	Install the PostgreSQL packages along with the PostGIS extension
+A5.1.	Install the PostgreSQL packages along with the PostGIS extension
 
 	**NOTE**: *Those steps must be done only if you don’t have the DB already installed on your system.*
 
@@ -133,7 +166,7 @@ The installation instructions are based on the [official GeoNode documentation](
 	sudo apt update -y; sudo apt install -y postgresql-13 postgresql-13-postgis-3 postgresql-13-postgis-3-scripts postgresql-13 postgresql-client-13
     ```
 
-2.	Create the GeoNode user. GeoNode is going to use this user to access the database
+A5.2.	Create the GeoNode user. GeoNode is going to use this user to access the database
 
     ```bash
     sudo service postgresql start
@@ -144,14 +177,14 @@ The installation instructions are based on the [official GeoNode documentation](
 
     **NOTE**: *This password is very weak and should be changed.*
 
-3.	Create database `geonode_odyssey` and `geonode_odyssey_data` with owner `geonode_odyssey`
+A5.3.	Create database `geonode_odyssey` and `geonode_odyssey_data` with owner `geonode_odyssey`
 
     ```bash
     sudo -u postgres createdb -O geonode_odyssey geonode_odyssey
 	sudo -u postgres createdb -O geonode_odyssey geonode_odyssey_data
     ```
 
- 4.	Create PostGIS extensions
+ A5.4.	Create PostGIS extensions
 
     ```bash
     sudo -u postgres psql -d geonode_odyssey -c 'CREATE EXTENSION postgis;'
@@ -165,13 +198,13 @@ The installation instructions are based on the [official GeoNode documentation](
 	sudo -u postgres psql -d geonode_odyssey_data -c 'GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO geonode_odyssey;'
     ```
        
-5.	Change user access policies for local connections in the file `pg_hba.conf`
+A5.5.	Change user access policies for local connections in the file `pg_hba.conf`
 
     ```bash
     sudo vim /etc/postgresql/13/main/pg_hba.conf
     ```
 
-6.	Make local connection trusted for the default user. Make sure your configuration looks like the one below
+A5.6.	Make local connection trusted for the default user. Make sure your configuration looks like the one below
 
     ```bash
     # ...
@@ -199,13 +232,13 @@ The installation instructions are based on the [official GeoNode documentation](
 	host    replication     all             ::1/128                 md5
     ```
 
-7.	Restart PostgreSQL to make the change effective
+A5.7.	Restart PostgreSQL to make the change effective
 
     ```bash
     sudo service postgresql restart
     ```
 
-8.	PostgreSQL is now ready. To test the configuration, try to connect to the GeoNode database as GeoNode role
+A5.8.	PostgreSQL is now ready. To test the configuration, try to connect to the GeoNode database as GeoNode role
 
     ```bash
     psql -U postgres geonode_odyssey
@@ -244,12 +277,16 @@ To stop GeoNode:
 ```bash
 ./paver_dev.sh stop
 ```
+**NOTE**: Phew, end of section **A** that might not reall work!
 
-### GeoNode-Project Installation with Docker
+
+### Now, the real deal ... 
+### B: GeoNode-Project Installation with Docker
 
 The installation instructions are based on the [official GeoNode documentation](https://docs.geonode.org/en/3.3.x/install/advanced/project/index.html#deploy-an-instance-of-a-geonode-project-django-template-3-3-2-with-docker-on-localhost) and [GeoNode Training Documentation by GeoSolutions](https://training.geonode.geo-solutions.it/GN3/docker/index.html).
 
-1.	[Docker Setup](https://docs.geonode.org/en/3.3.x/install/advanced/core/index.html#docker) (first time only)
+**NOTE**: Install Docker
+[Docker Setup](https://docs.geonode.org/en/3.3.x/install/advanced/core/index.html#docker) (first time only, if already istalled in your machine, skip installing Docker). Here it goes:
 
     ```bash
     sudo add-apt-repository universe
@@ -266,37 +303,31 @@ The installation instructions are based on the [official GeoNode documentation](
 	sudo apt autoremove –purge
     ```
 
-2.	Clone the project from GitHub
-
-    ```bash
-    git clone https://github.com/rafaelsa99/odyssey.git
-    ```
-
-3.	Create a virtual environment
-
-	```bash
-    mkvirtualenv --python=/usr/bin/python3 geonode_odyssey
-	workon geonode_odyssey
-    ```
-
-4.	Install Django framework
-
-	```bash
-    pip install Django==2.2.24
-    ```
-
-5.	Build the Docker Containers
+B.1	Build the Docker Containers
 
 	```bash
     cd odyssey/
 	docker-compose -f docker-compose.yml build --no-cache
     ```
 
-6.	Run the containers
+B.2	Run the containers
 
 	```bash
     docker-compose -f docker-compose.yml up -d
     ```
+
+**NOTE**: If you are running apache2 server, you need to stop it using:
+
+```bash
+	/etc/init.d/apache2 stop
+	
+	OR
+	sudo /etc/init.d/apache2 stop
+
+	OR
+	sudo service apache2 stop
+    ```
+
 
 Once the containers are running, GeoNode is available at: http://localhost
 
@@ -306,7 +337,7 @@ GeoServer is available at: http://localhost/geoserver/web/
 
 **NOTE**: default user is ``admin`` (with pw: ``geoserver``)
 
-7.	To stop the containers:
+B.3	To stop the containers:
 
 	```bash
 	docker-compose -f docker-compose.yml stop
@@ -325,7 +356,7 @@ Besides the instructions for deploying, the configurations defined in the .env f
 - DEFAULT_FROM_EMAIL
 - Default passwords (e.g., GEOSERVER_ADMIN_PASSWORD, ADMIN_PASSWORD)
 
-## GeoNode Configuration
+## C: GeoNode Configuration
 
 In addition to the settings presented below, GeoNode allows you to perform other configurations. More information can be found in the [official GeoNode documentation](https://docs.geonode.org/en/3.3.x/index.html).
 
